@@ -176,3 +176,36 @@ if (ageJohn >= 18) {
     const yearsLeft = 18 - ageJohn;
     console.log(`John is to young, wait ${yearsLeft} years!`);
 }
+
+const birthYear = 1991;
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century);
+
+// ## Coding chalange 2 ##
+
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+const markHigherBMI = BMIMark > BMIJohn;
+console.log(BMIMark, BMIJohn, markHigherBMI);
+//  BMIMar = 27.30 and BMIJohn = 24.19
+
+console.log(`Among the two individuals which performed the health analysis the Mark showed a BMI of ${BMIMark}. The John presented a BMI of ${BMIJohn}`);
+
+if (BMIMark > BMIJohn) {
+    console.log(`The BMI of Mark is higher than John`)
+} else {
+    console.log(`The BMI of Mark is lower than John`)
+}
+
+// Console: Among the two individuals which performed the health analysis the Mark showed a BMI of 27.309968138370508. The John presented a BMI of 24.194608809993426.
+// The BMI of Mark is higher than John.
