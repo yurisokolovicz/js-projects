@@ -145,3 +145,7 @@ console.log(`Just a regular string...`)
 console.log(`For using multi-line string \n\
 we should use the bar-n-bar element \n\
 in order to separate the lines`)
+
+console.log(`But we don't need to use the bar-n-bar
+elemment becoming easy to code specially in
+the html's projects.`)
