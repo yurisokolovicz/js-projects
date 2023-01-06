@@ -158,11 +158,11 @@ the html's projects.`);
 // }
 
 const ageSarah = 19;
-const isOldEnoughA = ageSarah >= 18;
+const isOldEnoughSarah = ageSarah >= 18;
 const ageJohn = 15;
-const isOldEnoughB = ageJohn >= 18;
+const isOldEnoughJohn = ageJohn >= 18;
 
-if (isOldEnoughA) {
+if (isOldEnoughSarah) {
     console.log(`Sarah can start the driving license 🚗.`);
 }
 
