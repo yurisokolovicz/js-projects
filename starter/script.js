@@ -138,14 +138,14 @@ console.log(yuri);
 const yuriNew = `Hi! I'm ${firstName}; a ${year - birthYear} years old ${job}!`
 console.log(yuriNew);
 
-console.log(`Just a regular string...`)
+console.log(`Just a regular string...`);
 
 // ### If you need a MULTI-LINE STRING USE (\n\); ###
 
 console.log(`For using multi-line string \n\
 we should use the bar-n-bar element \n\
-in order to separate the lines`)
+in order to separate the lines`);
 
 console.log(`But we don't need to use the bar-n-bar
 elemment becoming easy to code specially in
-the html's projects.`)
+the html's projects.`);
