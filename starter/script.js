@@ -149,3 +149,30 @@ in order to separate the lines`);
 console.log(`But we don't need to use the bar-n-bar
 elemment becoming easy to code specially in
 the html's projects.`);
+
+// ## Taking Decisions: if / else Statements ##
+// if (boolean value - condition true or false) {
+//     This block is execute if the condition is true
+// } else {
+//     executed when the condition is false
+// }
+
+const ageSarah = 19;
+const isOldEnoughA = ageSarah >= 18;
+const ageJohn = 15;
+const isOldEnoughB = ageJohn >= 18;
+
+if (isOldEnoughA) {
+    console.log(`Sarah can start the driving license 🚗.`);
+}
+
+if (ageSarah >= 18) {
+    console.log(`Sarah can start the driving license 🚗.`);
+}
+
+if (ageJohn >= 18) {
+    console.log(`John can start the driving license 🚗.`);
+} else {
+    const yearsLeft = 18 - ageJohn;
+    console.log(`John is to young, wait ${yearsLeft} years!`);
+}
