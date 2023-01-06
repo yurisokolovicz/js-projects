@@ -209,3 +209,31 @@ if (BMIMark > BMIJohn) {
 
 // Console: Among the two individuals which performed the health analysis the Mark showed a BMI of 27.309968138370508. The John presented a BMI of 24.194608809993426.
 // The BMI of Mark is higher than John.
+
+// ## Type Conversion ##
+const inPutYear = '1991';
+console.log(Number(inPutYear), inPutYear);
+console.log(Number(inPutYear) + 18);
+console.log(Number('Yuri'));
+// NaN = invalid number
+console.log(typeof NaN);
+console.log(String(23), 23);
+// Number e String devem iniciar com letra maiuscula senao nao funciona.
+
+// ## Type Coercion ##
+console.log('I am ' + '23' + ' years old.');
+console.log('I am ' + 23 + ' years old.');
+console.log('23' + '10' + 3);
+// operator (+) converte number em string, resul = 23103.
+console.log('23' - '10' - 3);
+// operador (-) converte string em numero, se possivel. result = 10.
+console.log('23' * '2');
+console.log('23' / '2');
+
+let n = '1' + 1; // = 11
+n = n - 1; // 11-1 = 10
+console.log(n);
+
+a = 2 + 3 + 4 + '5'; // = 95 (Calculo realizado da esquerda para a direita)
+b = '10' - '4' - '3' - 2 + '5' // = 15
+console.log(a, b);
