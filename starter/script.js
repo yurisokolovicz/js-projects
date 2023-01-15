@@ -319,6 +319,5 @@ if (favourite !== 23) console.log('Why not 23?');
 // !== diferente.
 */
 
-// Yuri tem um ticao
-//A frase acima eh verdade verdadeira.
+
 
