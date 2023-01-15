@@ -236,4 +236,85 @@ console.log(n);
 
 a = 2 + 3 + 4 + '5'; // = 95 (Calculo realizado da esquerda para a direita)
 b = '10' - '4' - '3' - 2 + '5' // = 15
-console.log(a, b);
+console.log(a, b); 
+
+// ## Truthy and falsy values ##
+// The only 5 falsy values: 0, '', undefined, null, NaN (not an number). All this 5 values will be converted into false when we attempt to convert them into a boolean.
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean('Yuri'));
+console.log(Boolean({})); //empty object
+console.log(Boolean(''));
+
+const money = 0;
+if (money) { //js will try to convert money into a boolean, 0 can not be converted into a bollean, result = false. Problema pode ser fixado usando Logical operators.
+    console.log("Don't spend it all ;");
+} else {
+    console.log('You should get a job!')
+}
+
+const meters = 100;
+if (meters) { 
+    console.log("Don't spend it all ;");
+} else {
+    console.log('You should get a job!')
+}
+//js will try to convert meters into a boolean, 100 can be converted into a bollean, result = true.
+
+let height; //height is undefined. 
+if (height) {
+    console.log('YAY! Height is defined');
+} else {
+    console.log('Height is UNDEFINED');
+}
+
+let color = 'blue'; //color = blue. 
+if (color) {
+    console.log('YAY! color = blue is defined');
+} else {
+    console.log('color = blue is UNDEFINED');
+}
+
+
+// ## Equality Operators == vs. === ##
+// === (exactly-sctrict) don't execute coercion 
+// == (loose) execute coercion '18' == 18 (true)
+const age = '18';
+if (age === 18) console.log('You just became an adult (strict)');
+if (age == 18) console.log('You are a child (loose)');
+// use === when compare values.
+
+const year = 7;
+if (year === 7) console.log('strict');
+if (year == 7) console.log('loose');
+
+// const favourite = prompt("what is your favourite number?");
+// console.log(favourite);
+// console.log(typeof favourite); //string
+// // O valor digitado no pop-up do prompt sera armazenado na variavel favourite.
+
+
+// if (favourite == 23) { //string, == do type coercion
+//     console.log('Cool! 23 is an amazing number!')
+// }
+// // '23' == 23
+
+const favourite = Number(prompt("what is your favourite number?"));
+console.log(favourite);
+console.log(typeof favourite); 
+
+if (favourite === 23) { // 23 === 23
+    console.log('Cool! 23 is an amazing number!')
+} else if (favourite === 7) {
+    console.log('7 is also a cool number')
+} else if (favourite === 9) {
+    console.log('9 is a nice number for you')
+} else {
+    console.log('Number is not 7,9 or 23')
+}
+
+if (favourite !== 23) console.log('Why not 23?');
+// !== diferente.
+
+
