@@ -473,3 +473,6 @@ console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`); // exemplo
 const bill = 275; //try also 430
 const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+
+// ES6/ES2015 (ECMAScript 2015) was released: The biggest update to the language ever!
+// ECMAScript changes to an annual release cycle in order to ship less features per update
