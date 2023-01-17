@@ -30,6 +30,8 @@ function fruitProcessor(apples, oranges) {
     return juice;
     //const juice = String using the input data of the function
 }
+//const eh para armazenar como variavel
+
 //Calling, running, invoking the function
 const appleJuice = fruitProcessor(5, 0); 
 console.log(appleJuice);
@@ -40,10 +42,8 @@ console.log(appleOrangeJuice);
 //function nameOfFunction (parameters) {
     //funcao propriamente dita (function body);}
     //return para poder levar os dados p fora da funcao - IMPORTANT
-
 //Calling function with certains parameters
 
-*/
 
 //## 4. Functions Declaration vs Expressions##
 
@@ -61,3 +61,24 @@ const calcAge2 = function (birthYear) {
 const age2 = calcAge2(1991);
 
 console.log(age1, age2);
+
+
+//## 5. Arrow Functions - menor e mais rapida de ser escrita ##
+
+// Arrow Function - ruim p codigos grandes
+const calcAge3 = birthYear => 2037 - birthYear;
+const age3 = calcAge3(1991) // call the
+console.log(age3);
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = 2037 - birthYear;
+    const retirement = 65 - age;
+    // return retirement;
+    return `${firstName} retires in ${retirement} years`
+}
+
+console.log(yearsUntilRetirement(1991, 'Jonas'));
+console.log(yearsUntilRetirement(1998, 'Bob'));
+
+*/
+
