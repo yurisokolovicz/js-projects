@@ -10,9 +10,9 @@ if (hasDriversLicense) console.log('I can drive');
 
 // const interface ='Audio;'
 // const private = 534;
-*/
 
-//## 3. Functions ##
+
+//## 3. Functions Declaration ##
 
 function logger() { // () are parameters 
     //function body
@@ -36,3 +36,10 @@ console.log(appleJuice);
 const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
 // 5, 0, 2, 4 are argumment
+
+//function nameOfFunction (parameters) {
+    //funcao propriamente dita;}
+
+//Calling function with certains parameters
+
+*/
