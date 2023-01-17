@@ -441,11 +441,10 @@ if (23 > 10) {
 const me = 'Jonas';
 console.log(`I'm ${2037 - 1991} years old ${me}`)
 
-*/
 
 //## The Conditional (Ternary) Operator ##
 // Replacement of if else elements
-// (?) question mark is the code will be executed if the condition before is true.
+// (?) question mark is the code will be executed if the condition before is true, it is the ternary (if else) operator.
 
 const age = 17;
 age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water');
@@ -463,3 +462,14 @@ const drink = age >= 18 ? 'wine' : 'water';
 console.log(drink); // jeito mais simples (ternary)
 
 console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`); // exemplo
+*/
+
+// ## Coding chalange 4 ##
+
+//HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
+//HINT: Value x is between 50 and 300, if its >= 50 && <= 300
+//Calculate TIP (gorjeta) using if else ternary operator; BILL = conta
+
+const bill = 275; //try also 430
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
