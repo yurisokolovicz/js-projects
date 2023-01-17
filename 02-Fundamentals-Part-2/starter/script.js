@@ -35,11 +35,29 @@ const appleJuice = fruitProcessor(5, 0);
 console.log(appleJuice);
 const appleOrangeJuice = fruitProcessor(2, 4);
 console.log(appleOrangeJuice);
-// 5, 0, 2, 4 are argumment
+// 5, 0, 2, 4 are argumment (it is the atual value of the parameter )
 
 //function nameOfFunction (parameters) {
-    //funcao propriamente dita;}
+    //funcao propriamente dita (function body);}
+    //return para poder levar os dados p fora da funcao - IMPORTANT
 
 //Calling function with certains parameters
 
 */
+
+//## 4. Functions Declaration vs Expressions##
+
+// Function Declaration - Pode ser chamado no codigo antes de ser definida.
+const age1 = calcAge1(1991);
+
+function calcAge1(birthYear) {
+    return 2037 - birthYear;
+}
+
+// Function Expression
+const calcAge2 = function (birthYear) {
+    return 2037 - birthYear;
+}
+const age2 = calcAge2(1991);
+
+console.log(age1, age2);
