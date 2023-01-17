@@ -154,5 +154,46 @@ scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 checkwinner(scoreDolphins, scoreKoalas);
 
-*/
 
+// ## 9.Introduction to Arrays (Matrizes)#1 ##
+// Para estruturacao de dados, coloca todos em um grande container (matriz): The two most important data structure in javascript is Arrays and objects
+
+const friend1 = 'Michael';//0
+const friend2 = 'Steven';//1
+const friend3 = 'Peter';//2
+
+const friends = ['Michael', 'Steven', 'Peter']; //literal sintax
+console.log(friends);
+
+const yrs = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay'; //trocando o elemento 2
+console.log(friends);
+
+const firstName = 'Jonas';
+const jonas = ['Jonas', 'Schmedtmann', 2037 - 1991, 'teacher', friends];
+console.log(jonas);
+console.log(jonas.length);
+
+
+// Exercise
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+const years = [1990, 1967, 2002, 2010, 2018];
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+console.log(ages);
+
+*/
