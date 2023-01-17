@@ -380,7 +380,7 @@ if (scoreDolphins > scoreKoalas && (scoreDolphins >= 100)) {
 } else {
     console.log('No one wins the trophy')
 }
-*/
+
 
 //## The Switch Statement - declaracao de troca##
 
@@ -424,6 +424,23 @@ if (day === 'monday') {
 } else {
     console.log('Not a valid day');
 }
-
+*/
 
 //## Statements and Expressions ##
+// Expressions = produce values
+
+3 + 4
+1991
+true && false && !false //gera um valor
+
+// Statements = Big peace of code wich does not produce a value by it self = it is a complete sentence
+
+if (23 > 10) {
+    const str = '23 is bigger';
+} //declara o valor mas n produz o valor
+
+const me = 'Jonas';
+console.log(`I'm ${2037 - 1991} years old ${me}`)
+
+//## The Conditional (Ternary) Operator ##
+
