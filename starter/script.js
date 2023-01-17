@@ -424,7 +424,6 @@ if (day === 'monday') {
 } else {
     console.log('Not a valid day');
 }
-*/
 
 //## Statements and Expressions ##
 // Expressions = produce values
@@ -442,5 +441,25 @@ if (23 > 10) {
 const me = 'Jonas';
 console.log(`I'm ${2037 - 1991} years old ${me}`)
 
-//## The Conditional (Ternary) Operator ##
+*/
 
+//## The Conditional (Ternary) Operator ##
+// Replacement of if else elements
+// (?) question mark is the code will be executed if the condition before is true.
+
+const age = 17;
+age >= 18 ? console.log('I like to drink wine') : console.log('I like to drink water');
+// condition + if part + else part.
+
+let drink2;
+if (age >= 18) {
+    drink2 = 'wine';
+} else {
+    drink2 = 'water';
+}
+console.log(drink2);
+
+const drink = age >= 18 ? 'wine' : 'water';
+console.log(drink); // jeito mais simples (ternary)
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`); // exemplo
