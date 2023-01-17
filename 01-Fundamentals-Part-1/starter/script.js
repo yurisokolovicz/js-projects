@@ -462,7 +462,7 @@ const drink = age >= 18 ? 'wine' : 'water';
 console.log(drink); // jeito mais simples (ternary)
 
 console.log(`I like to drink ${age >= 18 ? 'wine' : 'water'}`); // exemplo
-*/
+
 
 // ## Coding chalange 4 ##
 
@@ -476,3 +476,5 @@ console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bil
 
 // ES6/ES2015 (ECMAScript 2015) was released: The biggest update to the language ever!
 // ECMAScript changes to an annual release cycle in order to ship less features per update
+
+*/
