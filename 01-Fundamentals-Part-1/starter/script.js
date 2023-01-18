@@ -1,4 +1,4 @@
-/*
+
 let js = 'amazing';
 console.log(1 + 7 + 15 + 30 - 13);
 
@@ -477,4 +477,3 @@ console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bil
 // ES6/ES2015 (ECMAScript 2015) was released: The biggest update to the language ever!
 // ECMAScript changes to an annual release cycle in order to ship less features per update
 
-*/
