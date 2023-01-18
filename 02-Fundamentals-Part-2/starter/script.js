@@ -264,7 +264,7 @@ console.log(yuri);
 
 console.log(yuri.lastName); // Dot
 
-console.log(yuri['lastName']); // Bracket
+console.log(yuri['lastName']); // Bracket - need to be a string ' '
 
 const namekey = 'Name';
 console.log(yuri['first' + namekey]); 
@@ -286,6 +286,39 @@ console.log(yuri);
 // "Yuri has 3 friends, and his best friend is called Michael"
 console.log(`${yuri.firstName} has ${yuri.friends.length} friends, and his best friend is called ${yuri.friends[0]}`);
 
-*/
 
 // ## 14. Object Methods ##
+
+const yuri = {
+    firstName: 'Yuri',
+    lastName: 'Andrade',
+    birthYear: 1995,
+    job: 'Researcher',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+  
+    // calcAage: function () {
+    //     // console.log(this);
+    //     return 2023 - this.birthYear;
+
+    calcAage: function () {
+        this.age = 2023 - this.birthYear;
+        return this.age;
+    }, //this. use values of yuri's function.
+
+    getSummary: function () {
+        return `${this.firstName} is a ${this.calcAage()}-years old ${this.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+    }
+};
+    
+console.log(yuri.calcAage());
+
+console.log(yuri.age);
+console.log(yuri.age);
+console.log(yuri['age']);
+
+// Challenge
+// "Yuri is a 38-years old researcher, and he has a driver's license"
+console.log(yuri.getSummary());
+
+*/
