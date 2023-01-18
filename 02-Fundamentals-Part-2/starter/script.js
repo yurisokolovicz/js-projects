@@ -378,6 +378,55 @@ for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep}`);
 }
 
-*/
 
 // ## Looping Arrays, Breaking and Continuing ##
+
+const yuri = [
+    'Yuri',
+    'Andrade',
+    2023 - 1995,
+    'researcher',
+    ['Michael', 'Peter', 'Steven'],
+    true
+];
+const types = [];
+
+for (let i = 0; i < yuri.length; i++) {
+    // Reading from yuri array
+    console.log(yuri[i], typeof yuri[i]);
+
+    // Filling types array
+    // types[i] = typeof yuri[i];
+    types.push(typeof yuri[i]);
+}
+console.log(types);
+
+//###########
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+
+console.log(ages);
+
+// Continue and Break
+// Continue
+console.log('--ONLY STRINGS--')
+for (let i = 0; i < yuri.length; i++) {
+    if (typeof yuri[i] !== 'string') continue;
+    //we only want to log string to the console (!== means different)
+    console.log(yuri[i], typeof yuri[i]);
+}
+
+// Break
+console.log('--BREAK WITH NUMBERS--')
+for (let i = 0; i < yuri.length; i++) {
+    if (typeof yuri[i] === 'number') break;
+    console.log(yuri[i], typeof yuri[i]);
+    //after find the number, nothing else is printed in the console.
+}
+
+*/
