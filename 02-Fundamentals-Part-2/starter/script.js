@@ -247,3 +247,42 @@ const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 console.log(bills, tips, totals);
 
 */
+
+// ## 12. Introduction to Objects ##
+
+const yuri = {
+    firstName: 'Yuri',
+    lastName: 'Andrade',
+    age: 2023 - 1985,
+    job: 'researcher',
+    friends: ['Michael', 'Peter', 'Steven']
+}; // Object with 5 keys's value pairs
+// 5 propretiers: firstName, lastName,...
+console.log(yuri);
+
+// ## 13. Dot vs. Bracket Notation ##
+// Two ways to get the properties from a object
+
+console.log(yuri.lastName); // Dot
+
+console.log(yuri['lastName']); // Bracket
+
+const namekey = 'Name';
+console.log(yuri['first' + namekey]); 
+console.log(yuri['last' + namekey]);
+
+const interestedIn = prompt('What do you want to know about Yuri? Choose between firstName, lastName, age, job, and friends');
+
+if (yuri[interestedIn]) {
+    console.log(yuri[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends')
+}
+
+yuri.location = 'Brazil';
+yuri['twitter'] = '@yurirock';
+console.log(yuri);
+
+// Challange
+// "Yuri has 3 friends, and his best friend is called Michael"
+console.log(`${yuri.firstName} has ${yuri.friends.length} friends, and his best friend is called ${yuri.friends[0]}`);
