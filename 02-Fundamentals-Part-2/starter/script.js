@@ -246,7 +246,6 @@ const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(bills, tips, totals);
 
-*/
 
 // ## 12. Introduction to Objects ##
 
@@ -283,6 +282,10 @@ yuri.location = 'Brazil';
 yuri['twitter'] = '@yurirock';
 console.log(yuri);
 
-// Challange
+// Challenge
 // "Yuri has 3 friends, and his best friend is called Michael"
 console.log(`${yuri.firstName} has ${yuri.friends.length} friends, and his best friend is called ${yuri.friends[0]}`);
+
+*/
+
+// ## 14. Object Methods ##
