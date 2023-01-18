@@ -429,4 +429,31 @@ for (let i = 0; i < yuri.length; i++) {
     //after find the number, nothing else is printed in the console.
 }
 
+
+// ## Looping Backwards and Loops in Loops ##
+
+// De tras p frente (Backwards)
+// 0, 1, ..., 4 - normal
+// 4, 3, ..., 0 - de tras p frente
+
+const yuri = [
+    'Yuri',
+    'Andrade',
+    2023 - 1995,
+    'researcher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+for (let i = yuri.length - 1; i >= 0; i--) {
+    console.log(i, yuri[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`----Starting exercise ${exercise}`);
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+    }
+}
+
 */
