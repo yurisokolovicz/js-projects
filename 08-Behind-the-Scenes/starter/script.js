@@ -88,12 +88,14 @@
 console.log(this); // Window Object
 
 const calcAge = function (birthYear) {
+  // undefined in strict mode
   console.log(2037 - birthYear);
   console.log(this);
 };
 calcAge(1991);
 
 const calcAgeArrow = (birthYear) => {
+  // this of surrounding function (lexical this)
   console.log(2037 - birthYear);
   console.log(this);
 };
