@@ -29,9 +29,55 @@ const restaurant = {
             open: 0, // Open 24 hours
             close: 24
         }
+    },
+
+    oderDelivery: function ({ startedIndex = 1, mainIndex = 0, time = '20:00', address }) {
+        console.log(
+            `Order received! ${this.starterMenu[startedIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
+        );
     }
 };
-// test
+
+restaurant.oderDelivery({
+    time: '22:30',
+    address: 'Via del Sole, 21',
+    mainIndex: 2,
+    starterIndex: 2
+});
+
+restaurant.oderDelivery({
+    address: 'Via del Sole, 21',
+    startedIndex: 1
+});
+
+// Destructuring Objects
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const { name: restaurantName, openingHours: hours, categories: tags } = restaurant;
+console.log(restaurantName, hours, tags);
+
+// Default values
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// Nested objects
+const {
+    fri: { open: o, close: c }
+} = openingHours;
+console.log(o, c);
+
+/*
+///////////////////////////////////////////////////////
+// Destructuring Arrays
 
 const arr = [2, 3, 4];
 const a = arr[0];
@@ -41,7 +87,6 @@ const [x, y, z] = arr; // Destructuring Arrays
 console.log(x, y, z);
 console.log(arr);
 
-// Destructuring Arrays
 // const [first, , second] = restaurant.categories;
 // console.log(first, second);
 
@@ -75,3 +120,4 @@ console.log(i, j, k);
 // Default values
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
