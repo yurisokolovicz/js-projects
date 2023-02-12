@@ -38,8 +38,48 @@ const restaurant = {
     // }
     orderPasta: function (ing1, ing2, ing3) {
         console.log(`Here is your delicious pasta with ${ing1}, ${ing2} and ${ing3}`);
+    },
+
+    orderPizza: function (mainIngredient, ...otherIngredients) {
+        console.log(mainIngredient);
+        console.log(otherIngredients);
     }
 };
+
+/*
+// Rest Pattern and Parameters
+
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+// REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherfood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherfood);
+
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+// 2) Functions
+const add = function (...numbers) {
+    // console.log(numbers);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+    console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+add(8, 2, 5, 3, 2, 1, 4);
+
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olive oil', 'spinach');
+restaurant.orderPizza('mushrooms');
 
 // restaurant.oderDelivery({
 //     time: '22:30',
@@ -52,6 +92,9 @@ const restaurant = {
 //     address: 'Via del Sole, 21',
 //     startedIndex: 1
 // });
+
+// Rest Pattern and Parameters
+
 
 // ## The Spread Operator (...)
 const arr = [7, 8, 9];
@@ -80,12 +123,12 @@ const letters = [...str, ' ', 'S.'];
 console.log(letters);
 
 // Real-world examples
-// const ingredients = [prompt("Let's make pasta! Ingredient 1?"), prompt('Ingredient 2?'), prompt('Ingredient 3?')];
+const ingredients = [prompt("Let's make pasta! Ingredient 1?"), prompt('Ingredient 2?'), prompt('Ingredient 3?')];
 
-// console.log(ingredients);
+console.log(ingredients);
 
-// restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
-// restaurant.orderPasta(...ingredients);
+restaurant.orderPasta(ingredients[0], ingredients[1], ingredients[2]);
+restaurant.orderPasta(...ingredients);
 
 // Objects
 const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Giuseppe' };
@@ -96,7 +139,7 @@ restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
 
-/*
+
 // Destructuring Objects
 
 const { name, openingHours, categories } = restaurant;
