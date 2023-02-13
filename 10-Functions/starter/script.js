@@ -182,3 +182,23 @@ console.log(addVAT2(100));
 console.log(addVAT2(23));
 
 */
+
+///////////////////////////////////////
+// Closures - Make the function remember all the variables that existed at function's birth place
+// Closures makes the function has access to the variable environment (VE) of the execution context in which it was created
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker();
+booker();
+booker();
+
+console.dir(booker);
