@@ -181,7 +181,6 @@ const addVAT2 = addTaxRate(0.23);
 console.log(addVAT2(100));
 console.log(addVAT2(23));
 
-*/
 
 ///////////////////////////////////////
 // Closures - Make the function remember all the variables that existed at function's birth place
@@ -202,3 +201,48 @@ booker();
 booker();
 
 console.dir(booker);
+
+*/
+
+///////////////////////////////////////
+// More Closure Examples
+// Example 1
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2);
+  };
+};
+
+g();
+f();
+console.dir(f);
+
+// Re-assigning f function
+h();
+f();
+console.dir(f);
+
+// Example 2 - Using timer function (setTimeout) in milliseconds, 1000 ms = 1 second
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+const perGroup = 1000; // nao tem prioridade no scope chain
+boardPassengers(180, 3); // closer tem prioridade na scope chain
