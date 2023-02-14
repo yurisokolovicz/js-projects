@@ -79,6 +79,18 @@ const displayMovements = function (movements) {
 };
 displayMovements(account1.movements);
 
+const createUserNames = function (accs) {
+    accs.forEach(function (acc) {
+        acc.username = acc.owner
+            .toLocaleLowerCase()
+            .split(' ')
+            .map(name => name[0])
+            .join('');
+    });
+};
+createUserNames(accounts);
+console.log(accounts);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -192,8 +204,6 @@ currenciesUnique.forEach(function (value, _, map) {
     console.log(`${value}: ${value}`);
 });
 
-*/
-
 ///////////////////////////////////////
 // In javascript there is 3 big and important array method for data transformation: map, filter, reduc
 // The map Method
@@ -214,3 +224,5 @@ console.log(movementsUSDfor);
 
 const movementsDescriptions = movements.map((mov, i) => `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`);
 console.log(movementsDescriptions);
+
+*/
