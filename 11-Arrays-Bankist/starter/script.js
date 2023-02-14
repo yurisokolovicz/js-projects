@@ -291,7 +291,6 @@ const max = movements.reduce((acc, mov) => {
 }, movements[0]); // First element of the array
 console.log(max);
 
-*/
 
 ///////////////////////////////////////
 // The Magic of Chaining Methods
@@ -308,3 +307,17 @@ const totalDepositsUSD = movements
     // .map(mov => mov * eurToUsd)
     .reduce((acc, mov) => acc + mov, 0);
 console.log(totalDepositsUSD);
+
+*/
+
+///////////////////////////////////////
+// The find Method - Will only return the first element in the array that satisfies this condition.
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(movements);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+// === because the owner names are unique
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
