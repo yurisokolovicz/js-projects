@@ -61,7 +61,7 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
-// It's good practice to pass data inside a function instead of having the function work with global variables
+// It's good practice to pass data inside a function instead of having the function work with global variables:
 const displayMovements = function (movements) {
     containerMovements.innerHTML = '';
 
@@ -193,3 +193,24 @@ currenciesUnique.forEach(function (value, _, map) {
 });
 
 */
+
+///////////////////////////////////////
+// In javascript there is 3 big and important array method for data transformation: map, filter, reduc
+// The map Method
+const eurToUsd = 1.1;
+
+// const movementsUSD = movements.map(function (mov) {
+//   return mov * eurToUsd;
+// });
+
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+const movementsDescriptions = movements.map((mov, i) => `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(mov)}`);
+console.log(movementsDescriptions);
