@@ -349,7 +349,6 @@ console.log(isEven(514));
 //     });
 // });
 
-*/
 
 ///////////////////////////////////////
 // Numeric Separators - ES2021
@@ -370,3 +369,41 @@ console.log(PI);
 // Converting strings to a number
 console.log(Number('230_000'));
 console.log(parseInt('230_000'));
+
+*/
+
+///////////////////////////////////////
+// Working with BigInt - serve para store large numbers
+console.log(2 ** 53 - 1); // numero maximo possivel em javascript - perde precisao acima desse ponto
+console.log(Number.MAX_SAFE_INTEGER);
+console.log(2 ** 53 + 1); // unsafe numbers
+console.log(2 ** 53 + 2);
+console.log(2 ** 53 + 3);
+console.log(2 ** 53 + 4);
+
+// (n) no final transforma um regular number em um bigInt number
+console.log(4838430248342043823408394839483204n);
+console.log(BigInt(48384302));
+
+// Operations
+console.log(10000n + 10000n);
+console.log(36286372637263726376237263726372632n * 10000000n);
+// console.log(Math.sqrt(16n)); // square operator does not work for bigInt
+
+// Its not possible to mix bigInt with regular numbers
+// console.log(10000n + 10000); // Error: Cannot mix BigInt and other types
+const huge = 20289830237283728378237n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+// Exceptions
+console.log(20n > 15);
+console.log(20n === 20); // === js does not do type coercion
+console.log(typeof 20n);
+console.log(20n == '20'); // == js does type coercion
+
+console.log(huge + ' is REALLY big!!!');
+
+// Divisions
+console.log(11n / 3n); // 3 - corta as casas decimais
+console.log(10 / 3); // 3.333333
