@@ -270,7 +270,6 @@ console.log(Number.isInteger(23));
 console.log(Number.isInteger(23.0));
 console.log(Number.isInteger(23 / 0));
 
-*/
 
 ///////////////////////////////////////
 // Math and Rounding
@@ -317,3 +316,35 @@ console.log((2.7).toFixed(0)); // always return a string
 console.log((2.7).toFixed(3)); // always return a string
 console.log((2.345).toFixed(2)); // always return a string
 console.log(+(2.345).toFixed(2)); // + = Number, to converting string to a number
+
+*/
+
+///////////////////////////////////////
+// The Remainder Operator
+console.log(5 % 2); // 1
+console.log(5 / 2); // 5 / 2 = 2.5 ; 5 = 2 * 2 + 1
+
+console.log(8 % 3); // 2
+console.log(8 / 3); // 8 / 3 = 2.66666 ;8 = 2 * 3 + 2
+
+console.log(6 % 2); //0
+console.log(6 / 2); // 6 / 2 = 3; 3 * 2 = 6. falta 0 para 6 virar 6
+
+console.log(7 % 2); // 1
+console.log(7 / 2); // 7 / 2 = 3.5; 3 * 2 = 6. falta 1 para 6 virar 7
+
+// even number = numero par
+// odd number = numero impar
+const isEven = n => n % 2 === 0;
+console.log(isEven(8));
+console.log(isEven(23));
+console.log(isEven(514));
+
+// labelBalance.addEventListener('click', function () {
+//     [...document.querySelectorAll('.movements__row')].forEach(function (row, i) {
+//         // 0, 2, 4, 6
+//         if (i % 2 === 0) row.style.backgroundColor = 'orangered';
+//         // 0, 3, 6, 9
+//         if (i % 3 === 0) row.style.backgroundColor = 'blue';
+//     });
+// });
