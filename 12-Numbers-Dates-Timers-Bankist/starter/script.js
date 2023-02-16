@@ -370,7 +370,6 @@ console.log(PI);
 console.log(Number('230_000'));
 console.log(parseInt('230_000'));
 
-*/
 
 ///////////////////////////////////////
 // Working with BigInt - serve para store large numbers
@@ -407,3 +406,45 @@ console.log(huge + ' is REALLY big!!!');
 // Divisions
 console.log(11n / 3n); // 3 - corta as casas decimais
 console.log(10 / 3); // 3.333333
+
+*/
+
+///////////////////////////////////////
+// Creating Dates
+
+// Create a date
+
+const now = new Date();
+console.log(now);
+
+console.log(new Date('Aug 02 2020 18:05:41'));
+console.log(new Date('December 24, 2015'));
+console.log(new Date(account1.movementsDates[0]));
+
+// months is zero based, 0 = january, 10 = november
+// JS corrigi os dias dos meses
+console.log(new Date(2037, 10, 19, 15, 23, 5));
+console.log(new Date(2037, 10, 31)); // corrigiu p 01 Dec
+
+console.log(new Date(0));
+console.log(new Date(3 * 24 * 60 * 60 * 1000)); // 3 days after day 0 in js
+
+// Working with dates
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate());
+console.log(future.getDay());
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString()); // Util para converter date Object in string - usado nesse projeto
+console.log(future.getTime());
+
+console.log(new Date(2142256980000));
+
+console.log(Date.now());
+
+future.setFullYear(2040);
+console.log(future);
