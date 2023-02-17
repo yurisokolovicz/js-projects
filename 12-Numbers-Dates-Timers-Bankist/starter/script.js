@@ -152,14 +152,37 @@ const updateUI = function (acc) {
     calcDisplaySummary(acc);
 };
 
+const startLogOutTimer = function () {
+    // Set time to 5 min
+    let time = 300;
+    // Call the timer every second
+    const timer = setInterval(function () {
+        const min = String(Math.trunc(time / 60)).padStart(2, 0);
+        const sec = String(time % 60).padStart(2, 0);
+        // In each call, print the remaining time to UI (User Interface)
+        labelTimer.textContent = `${min}:${sec}`;
+
+        // Decrease 1s
+        time--; // time = time - 1
+
+        // When 0 seconds, stop timer and log out user
+        if (time === 0) {
+            clearInterval(timer);
+            labelWelcome.textContent = `Log in to get started`;
+            containerApp.style.opacity = 0;
+        }
+    }, 1000);
+    return timer;
+};
+
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
+let currentAccount, timer;
 
-// FAKE ALWAYS LOGGED IN
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
+// // FAKE ALWAYS LOGGED IN
+// currentAccount = account1;
+// updateUI(currentAccount);
+// containerApp.style.opacity = 100;
 
 // day/month/year
 
@@ -187,6 +210,10 @@ btnLogin.addEventListener('click', function (e) {
         // Clear input fields
         inputLoginUsername.value = inputLoginPin.value = '';
         inputLoginPin.blur();
+
+        // Timer - clear the time of another accounts to avoid time overlap
+        if (timer) clearInterval(timer);
+        timer = startLogOutTimer();
 
         // Update UI
         updateUI(currentAccount);
@@ -497,7 +524,7 @@ const calcDaysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000 * 60 * 
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 10));
 console.log(days1);
 
-*/
+
 
 ///////////////////////////////////////
 // Timers
@@ -521,3 +548,5 @@ setInterval(function () {
     const now = new Date();
     console.log(now);
 }, 5000);
+
+*/
