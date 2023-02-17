@@ -219,15 +219,18 @@ btnLoan.addEventListener('click', function (e) {
     const amount = Math.floor(inputLoanAmount.value);
 
     if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-        // Add movement
-        currentAccount.movements.push(amount);
+        setTimeout(function () {
+            // Add movement
+            currentAccount.movements.push(amount);
 
-        // Add loan date
-        currentAccount.movementsDates.push(new Date().toISOString());
+            // Add loan date
+            currentAccount.movementsDates.push(new Date().toISOString());
 
-        // Update UI
-        updateUI(currentAccount);
+            // Update UI
+            updateUI(currentAccount);
+        }, 2500);
     }
+
     inputLoanAmount.value = '';
 });
 
@@ -479,7 +482,7 @@ console.log(Date.now());
 future.setFullYear(2040);
 console.log(future);
 
-*/
+
 
 ///////////////////////////////////////
 // Operations With Dates
@@ -493,3 +496,28 @@ const calcDaysPassed = (date1, date2) => Math.abs(date2 - date1) / (1000 * 60 * 
 // To calculate the diference in days between two dates
 const days1 = calcDaysPassed(new Date(2037, 3, 4), new Date(2037, 3, 10));
 console.log(days1);
+
+*/
+
+///////////////////////////////////////
+// Timers
+
+// setTimeout
+// asynchronous javascript
+setTimeout(() => console.log(`Here is your pizza 🍕`), 3000);
+console.log('Waiting1...');
+
+setTimeout((ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`), 5000, 'olives', 'spinach');
+console.log('Waiting2...');
+
+const ingredients = ['olives', 'tomatoes'];
+const pizzaTimer = setTimeout((ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2} 🍕`), 7000, ...ingredients);
+console.log('Waiting3...');
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+// // setInterval - executes this every 1 second
+setInterval(function () {
+    const now = new Date();
+    console.log(now);
+}, 5000);
