@@ -153,12 +153,13 @@ class PersonCl {
     return 2037 - this.birthYear;
   }
 
-  // Set a property that already exists
+  // Set a property that already exists to avoid name conflict (use _)
   set fullName(name) {
     if (name.includes(' ')) this._fullName = name;
     else alert(`${name} is not a full name!`);
   }
 
+  // Get of fullName does not exist anymore, needs to make get of _fullName
   get fullName() {
     return this._fullName;
   }
@@ -170,6 +171,7 @@ class PersonCl {
   }
 }
 
+// const yuri = new PersonCl('Yuri', 1990);
 const jessica = new PersonCl('Jessica Davis', 1996);
 console.log(jessica);
 jessica.calcAge();
@@ -187,4 +189,27 @@ jessica.greet();
 // 3. Classes are executed in strict mode
 
 const walter = new PersonCl('Walter White', 1965);
+walter.greet();
 // PersonCl.hey();
+
+///////////////////////////////////////
+// Setters and Getters
+const account = {
+  owner: 'Yuri',
+  movements: [200, 530, 120, 300],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+// Call a getter
+console.log(account.latest);
+
+// Call a setter
+account.latest = 50;
+console.log(account.movements);
