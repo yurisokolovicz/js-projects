@@ -1,5 +1,4 @@
 'use strict';
-
 /*
 ///////////////////////////////////////
 // Constructor Functions and the new Operator
@@ -32,6 +31,8 @@ Person.hey = function () {
   console.log(this);
 };
 Person.hey();
+// jonas.hey(); // It is not in the prototype of the Jonas object - Static Method
+
 
 ///////////////////////////////////////
 // Prototypes
@@ -124,7 +125,7 @@ bmw.accelerate();
 mercedes.accelerate();
 mercedes.brake();
 
-*/
+
 
 ///////////////////////////////////////
 // ES6 Classes
@@ -164,7 +165,8 @@ class PersonCl {
     return this._fullName;
   }
 
-  // Static method
+  // Static method inside Classes
+  // Methods will NOT be added to .prototype property
   static hey() {
     console.log('Hey there 👋');
     console.log(this);
@@ -213,3 +215,5 @@ console.log(account.latest);
 // Call a setter
 account.latest = 50;
 console.log(account.movements);
+
+*/
