@@ -640,6 +640,7 @@ Account.helper();
 // console.log(acc1.#pin);
 // console.log(acc1.#approveLoan(100)); // Browser does not support yet
 
-// Chaining
+//// Chaining
+// Need to set "return this;" in the deposit, withdraw, requestLoan, etc...
 acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
 console.log(acc1.getMovements());
