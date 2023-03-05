@@ -115,6 +115,7 @@ setTimeout(() => {
     }, 1000);
 }, 1000);
 
+
 */
 
 //////////////////////////////////
@@ -144,11 +145,25 @@ const renderCountry = function (data, className = '') {
     countriesContainer.style.opacity = 1;
 };
 
-// Old Method
-// const request = new XMLHttpRequest();
-// request.open('GET', `https://restcountries.com/v3.1/name/${country}?fullText=true`);
-// request.send();
+// // Consuming Promises
+// const getCountryData = function (country) {
+//     fetch(`https://restcountries.com/v3.1/name/${country}`)
+//         .then(function (response) {
+//             console.log(response);
+//             return response.json();
+//         })
+//         .then(function (data) {
+//             console.log(data);
+//             renderCountry(data[0]);
+//         });
+// };
 
-// Promise method
-const request = fetch('https://restcountries.com/v3.1/name/${portugal}?fullText=false');
-console.log(request);
+// Cleaner code with arrow functions
+// Fetchs data, transform it into json (code becomes strings), then render
+const getCountryData = function (country) {
+    fetch(`https://restcountries.com/v3.1/name/${country}`)
+        .then(response => response.json())
+        .then(data => renderCountry(data[0]));
+};
+
+getCountryData('portugal');
