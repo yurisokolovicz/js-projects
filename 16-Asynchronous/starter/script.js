@@ -173,7 +173,7 @@ const getCountryData = function (country) {
 
 getCountryData('portugal');
 
-*/
+
 //////////////////////////////////
 // Chaining Promises and Errors check
 
@@ -229,3 +229,41 @@ const getCountryData = function (country) {
 
 getCountryData('usa');
 // getCountryData('sdhuhass'); // Error check
+
+*/
+
+//////////////////////////////////
+// The Event Loop in Practice
+
+// Which order these 4 msg will be logged to the console??
+// Interview question
+// Any top level code (code outside of any callback) will run first.
+// SetTimeout will be put in the callback queue first but the promisse will be executed firsted because it will be in the microtask queue and it has priority over callback queue then it is executed first.
+
+// console.log('Test start');
+// setTimeout(() => console.log('0 sec timer'), 0);
+// Promise.resolve('Resolved promise 1').then(res => console.log(res));
+// console.log('Test end');
+
+// Results
+// Test start
+// Test end
+// Resolved promise 1
+// 0 sec timer
+
+console.log('Test start');
+setTimeout(() => console.log('0 sec timer'), 0);
+Promise.resolve('Resolved promise 1').then(res => console.log(res));
+
+Promise.resolve('Resolved promise 2').then(res => {
+    for (let i = 0; i < 1000; i++) {}
+    console.log(res);
+});
+console.log('Test end');
+
+// Results
+// Test start
+// Test end
+// Resolved promise 1
+// Resolved promise 2
+// 0 sec timer
