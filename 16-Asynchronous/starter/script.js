@@ -230,7 +230,7 @@ const getCountryData = function (country) {
 getCountryData('usa');
 // getCountryData('sdhuhass'); // Error check
 
-*/
+
 
 //////////////////////////////////
 // The Event Loop in Practice
@@ -267,3 +267,63 @@ console.log('Test end');
 // Resolved promise 1
 // Resolved promise 2
 // 0 sec timer
+
+*/
+
+//////////////////////////////////
+// Building a Simple Promise
+// The promise constructor have one argument (function), the executor function.
+// The executor has 2 arguments: resolve and reject
+
+const lotteryPromise = new Promise(function (resolve, reject) {
+    console.log('Lotter draw is happening 🎲');
+
+    setTimeout(function () {
+        if (Math.random() >= 0.5) {
+            resolve('You Win 👑');
+        } else {
+            reject(new Error('You lost your money 🙈'));
+        }
+    }, 2000);
+});
+// The error is the else
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
+
+// Promisifying setTimeout - timer doest need reject, impossible to a time fail
+const wait = function (seconds) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, seconds * 1000);
+    });
+};
+// We have a chain of asynchronous behavior happening in a sequence WITHOUT the bad callback hell
+wait(2)
+    .then(() => {
+        console.log('1 second passed');
+        return wait(1);
+    })
+    .then(() => {
+        console.log('2 second passed');
+        return wait(1);
+    })
+    .then(() => {
+        console.log('3 second passed');
+        return wait(1);
+    })
+    .then(() => console.log('4 second passed'));
+
+// Callback Hell - a lot of nested functions - very bad
+// setTimeout(() => {
+//     console.log('1 second passed');
+//     setTimeout(() => {
+//         console.log('2 seconds passed');
+//         setTimeout(() => {
+//             console.log('3 seconds passed');
+//             setTimeout(() => {
+//                 console.log('4 second passed');
+//             }, 1000);
+//         }, 1000);
+//     }, 1000);
+// }, 1000);
+
+Promise.resolve('abc').then(x => console.log(x));
+Promise.reject(new Error('Problem!')).catch(x => console.error(x));
