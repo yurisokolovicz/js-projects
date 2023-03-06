@@ -175,7 +175,7 @@ getCountryData('portugal');
 
 */
 //////////////////////////////////
-// Chaining Promises
+// Chaining Promises and Errors check
 
 const renderCountry = function (data, className = '') {
     const languages = data.languages[Object.keys(data.languages)[0]];
