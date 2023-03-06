@@ -381,9 +381,11 @@ const renderCountry = function (data, className = '') {
 };
 
 // Coding Challenge #1 starts here
+// Fetchs data, transform it into json (code becomes strings), then render
 const whereAmI = function (lat, lng) {
     fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=148242640815718264297x10968`)
         .then(res => {
+            console.log(res); // when error occurs; (ok: false)
             if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);
             return res.json();
         })
