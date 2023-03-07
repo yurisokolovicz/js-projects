@@ -413,7 +413,7 @@ whereAmI(-33.933, 18.474);
 
 
 /////////////////////////////////////////////////////////////////
-//############# Promisifying theGeolocation API ################
+//############# Promisifying the Geolocation API ################
 
 const renderCountry = function (data, className = '') {
     const languages = data.languages[Object.keys(data.languages)[0]];
@@ -505,7 +505,7 @@ PART 2
 TEST DATA: Images in the img folder. Test the error handler by passing a wrong image path. Set the network speed to 'Fast 3G' in the dev tools Network tab, otherwise images load too fast.
 
 GOOD LUCK 😀
-*/
+
 
 const wait = function (seconds) {
     return new Promise(function (resolve) {
@@ -560,3 +560,70 @@ createImage('img/img-1.jpg')
         currentImg.style.display = 'none';
     })
     .catch(err => console.log(err));
+*/
+
+/////////////////////////////////////////////////////////////////
+//##################### Async/Await #########################
+// Consuming Promises with Async/Await
+
+const renderCountry = function (data, className = '') {
+    const languages = data.languages[Object.keys(data.languages)[0]];
+
+    const currencies = data.currencies[Object.keys(data.currencies)[0]].name;
+
+    const html = `
+    <article class="country ${className}">
+          <img class="country__img" src="${data.flags.svg}" />
+          <div class="country__data">
+            <h3 class="country__name">${data.name.common}</h3>
+            <h4 class="country__region">${data.region}</h4>
+            <p class="country__row"><span>👫</span>${(+data.population / 1000000).toFixed(1)}m people</p>
+            <p class="country__row"><span>🗣️</span>${languages}</p>
+            <p class="country__row"><span>💰</span>${currencies}</p>
+          </div>
+    </article>
+    `;
+
+    countriesContainer.insertAdjacentHTML('beforeend', html);
+    countriesContainer.style.opacity = 1;
+};
+
+const getPosition = function () {
+    return new Promise(function (resolve, reject) {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+};
+
+// Async function will keep running in the background while performing the code
+// Await will stop the code execution untill the promise is fulfilled
+// Very elegant, the fulfilled promise is stored into a variable (const data) without having to mess with callback functions
+// Async await is used a lot together with the more traditional then method of consuming promises
+
+// const whereAmI = async function () {
+
+//     const res = await fetch(`https://restcountries.com/v3.1/name/${dataGeo.country}`);
+//     const data = await res.json();
+//     console.log(data);
+//     renderCountry(data[0]);
+// };
+// whereAmI();
+// console.log('FIRST');
+
+const whereAmI = async function () {
+    // Geolocation
+    const position = await getPosition();
+    const { latitude: lat, longitude: lng } = position.coords;
+
+    // Reverse geocoding
+    const resGeo = await fetch(`https://geocode.xyz/${lat},${lng}?geoit=json&auth=148242640815718264297x10968`);
+    const dataGeo = await resGeo.json();
+    console.log(dataGeo);
+
+    // Country data
+    const res = await fetch(`https://restcountries.com/v3.1/name/${dataGeo.country}`);
+    const data = await res.json();
+    console.log(data);
+    renderCountry(data[0]);
+};
+whereAmI();
+console.log('FIRST');
