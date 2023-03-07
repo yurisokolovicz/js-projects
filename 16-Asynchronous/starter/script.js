@@ -788,7 +788,7 @@ console.log('1: Will get location');
     console.log('3: Finished getting location');
 })();
 
-*/
+
 
 /////////////////////////////////////////////////////////////////
 //################ Running Promises in Parallel ################
@@ -855,3 +855,5 @@ get3Countries('brazil', 'canada', 'usa');
 // };
 
 // get3Countries('brazil', 'usa', 'italy');
+
+*/
