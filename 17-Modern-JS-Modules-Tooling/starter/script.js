@@ -114,7 +114,7 @@ ShoppingCart2.addToCart('hamburguer', 1);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
 
-*/
+
 
 ///////////////////////////////////////
 // CommonJS Modules
@@ -130,3 +130,5 @@ export.addTocart = function (product, quantity) {
 
 // Import
 const { addTocart } = require('./shoppingCart.js');
+
+*/
