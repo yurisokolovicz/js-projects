@@ -75,7 +75,7 @@ console.log(lastPost2);
 // Not very clean
 // lastPost.then(last => console.log(last));
 
-*/
+
 
 ///////////////////////////////////////
 // The Module Pattern
@@ -113,3 +113,20 @@ ShoppingCart2.addToCart('pizza', 2);
 ShoppingCart2.addToCart('hamburguer', 1);
 console.log(ShoppingCart2);
 console.log(ShoppingCart2.shippingCost);
+
+*/
+
+///////////////////////////////////////
+// CommonJS Modules
+// Export
+
+// it will not work in the browser, only in node.js
+export.addTocart = function (product, quantity) {
+  cart.push({ product, quantity });
+  console.log(
+    `${quantity} ${product} added to cart (sipping cost is ${shippingCost})`
+  );
+};
+
+// Import
+const { addTocart } = require('./shoppingCart.js');
